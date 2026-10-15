@@ -1,0 +1,119 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A beginner data science prototype for exploring study trends.">
+  <title>Study Insights | Data Lab</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#">
+      <span class="brand-icon">D</span>
+      <span>DataLab <span class="muted">/ Prototype</span></span>
+    </a>
+    <span class="status"><span class="status-dot"></span> DEMO MODE</span>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <p class="eyebrow">DATA SCIENCE · BEGINNER PROJECT</p>
+      <h1>Turn data into<br><span class="gradient-text">better decisions.</span></h1>
+      <p class="intro">
+        Explore the relationship between study time and exam performance
+        using a small example dataset.
+      </p>
+    </section>
+
+    <section class="dashboard">
+      <article class="panel input-panel">
+        <div class="panel-heading">
+          <div>
+            <p class="eyebrow">01 / YOUR INPUT</p>
+            <h2>Study planner</h2>
+          </div>
+          <span class="round-icon">↗</span>
+        </div>
+
+        <label for="hours">Daily study hours</label>
+        <div class="input-value">
+          <output id="hoursOutput" for="hours">5</output>
+          <span>hours / day</span>
+        </div>
+        <input id="hours" type="range" min="1" max="10"
+               step="0.5" value="5">
+        <div class="range-labels">
+          <span>1 hour</span><span>10 hours</span>
+        </div>
+
+        <button id="estimateBtn" type="button">
+          Calculate estimate <span aria-hidden="true">→</span>
+        </button>
+        <p class="hint">
+          This demonstration uses illustrative data, not real student records.
+        </p>
+      </article>
+
+      <article class="panel result-panel" aria-live="polite">
+        <p class="eyebrow">02 / YOUR RESULT</p>
+        <h2>Estimated exam score</h2>
+        <div class="score-line">
+          <span id="score">—</span>
+          <span class="out-of">/ 100</span>
+        </div>
+        <div class="meter">
+          <div id="meterFill" class="meter-fill"></div>
+        </div>
+        <p id="resultMessage" class="result-message">
+          Choose your study hours and calculate an estimate.
+        </p>
+        <div class="result-details">
+          <div>
+            <span class="detail-label">Study time</span>
+            <strong id="resultHours">—</strong>
+          </div>
+          <div>
+            <span class="detail-label">Method</span>
+            <strong>Linear trend</strong>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <section class="panel data-panel">
+      <div class="panel-heading">
+        <div>
+          <p class="eyebrow">03 / EXPLORE THE DATA</p>
+          <h2>Sample observations</h2>
+        </div>
+        <span id="rowCount" class="tag">10 records</span>
+      </div>
+      <p class="section-description">
+        These fictional example records illustrate how two variables
+        may move together. The app calculates a straight-line trend
+        from the records shown below.
+      </p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Study hours/day</th><th>Exam score</th><th>Visual</th></tr>
+          </thead>
+          <tbody id="dataRows"></tbody>
+        </table>
+      </div>
+      <p class="footnote">
+        Practice dataset only. Correlation does not establish causation.
+        This estimate is not validated for real-world decisions.
+      </p>
+    </section>
+
+    <footer>
+      <span>DataLab · Beginner prototype</span>
+      <span>Built with HTML, CSS & JavaScript</span>
+    </footer>
+  </main>
+</body>
+</html>
